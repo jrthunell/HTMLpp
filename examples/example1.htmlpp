@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+<data>
+{
+    "gotChars": [{"name": "Ned Stark", "alive": false},
+                 {"name": "Daenerys Targaryen", "alive": true},
+                 {"name": "Stannis Baratheon", "alive": false},
+                 {"name": "Jon Snow", "alive": true},
+                 {"name": "Jaime Lannister", "alive": true}]
+}
+</data>
+
+<define got-character alive name>
+    <li class="list-group-item">
+        <print>name</print> is
+        <if cond="alive">
+            <strong style="color:green">ALIVE</strong>
+        <else>
+            <strong style="color:red">DEAD</strong>
+        </if>
+    </li>
+</define>
+</head>
+<body>
+
+<div class="col-sm-4">
+    <h1>Game of Thrones characters (SPOILER WARNING)<h1>
+    <ul class="list-group">
+        <foreach character in gotChars>
+            <got-character character.alive character.name>
+        </foreach>
+    </ul>
+</div>
+
+</body>
+</html> 

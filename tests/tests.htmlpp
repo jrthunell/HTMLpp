@@ -1,0 +1,59 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css">
+<data>
+{
+    "dataVar":"If you can see this, the data tag is working", 
+    "btnToggle":0,
+    "groceries": ["Milk", "Eggs", "Butter"],
+    "gotChars": [{"name": "Ned Stark", "alive": false},
+                 {"name": "Daenerys Targaryen", "alive": true},
+                 {"name": "Stannis Baratheon", "alive": false},
+                 {"name": "Jon Snow", "alive": true},
+                 {"name": "Jaime Lannister", "alive": true}],
+    "foreachTagTest": ["If you can see this, the foreach tag is working"]
+}
+</data>
+<import src="data.json">
+</head>
+<body>
+<define my-define-tag><h1>If you can see this, the define tag is working</h1></define>
+
+<h1><print>"If you can see this, the print tag is working"</print></h1>
+<h1><print>dataVar</print></h1>
+<h1><print>importVar</print></h1>
+<my-define-tag>
+<foreach str in foreachTagTest>
+    <h1><print>str</print></h1>
+</foreach>
+<h1>If<if cond="false"> you CAN'T see this, and
+<else> you can see this, the if tag is working</if></h1>
+
+<define my-grocery-item text><li class="list-group-item"><print>text</print></li></define>
+<define my-grocery-list>
+<ul class="list-group">Grocery List (If you see this list, the foreach tag is working)
+    <foreach item in groceries>
+        <my-grocery-item item>
+    </foreach>
+</ul>
+</define>
+<my-grocery-list>
+
+<div class="col-sm-4">
+    <ul class="list-group">
+    If you can see this list, data, foreach, and if all work:
+        <foreach character in gotChars>
+            <if cond="character.alive">
+                <li class="list-group-item">
+                    <print>character.name</print> is <strong style="color:green">ALIVE</strong>
+                </li>
+            <else>
+                <li class="list-group-item">
+                    <print>character.name</print> is <strong style="color:red">DEAD</strong>
+                </li>
+            </if>
+        </foreach>
+    </ul>
+</div>
+</body>
+</html> 

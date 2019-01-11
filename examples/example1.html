@@ -1,0 +1,7 @@
+<script src = "../htmlpp.js"></script>
+<script>
+var x = htmlpp.compile("./example1.htmlpp");
+document.write(x.compile());
+x.update();
+window.setInterval(function(){ x.update()}, 1000);
+</script>

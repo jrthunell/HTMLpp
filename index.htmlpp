@@ -1,0 +1,9 @@
+<html>
+<head>
+	<title>HTML++ Project</title>
+</head>
+<body>
+	Welcome to HTML++! <br>
+	This library adds several useful tags to HTML. Check our documentation for more information.
+</body>
+</html>

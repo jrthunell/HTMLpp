@@ -1,0 +1,71 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+
+<data>
+{
+    "groceries": [{"name": "Milk", "price": 3.00},
+                  {"name": "Eggs", "price": 1.50}, 
+                  {"name": "Butter", "price": 3.50}]
+}
+</data>
+
+
+<define grocery-item name price>
+    <li class="list-group-item">
+        <print>name</print>&nbsp;
+        $<print>price.toFixed(2)</print>
+    </li>
+</define>
+
+<define grocery-form>
+        <div class="card text-white bg-primary mb-3" style="margin-top:40px">
+        <div class="card-header">Add Item</div>
+        <div class="card-body">
+        <form onsubmit="return processForm()" name="grocery-form" action="#">
+            <div class="form-group">
+                <label for="name">Item Name</label>
+                <input class="form-control" name="name">
+
+                <label for="price">Item Price</label>
+                <input class="form-control" name="price">
+
+                <button type="submit" class="btn btn-success">Add Item</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</define>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Grocery List</a>
+</nav>
+
+<div class="container text-center">
+    <div class="col-sm-4 offset-sm-4">
+        <h3>Groceries</h3>
+        <ul class="list-group">
+        <foreach item in groceries>
+            <grocery-item item.name item.price>
+        </foreach>
+        </ul>
+    <grocery-form>
+    </div>
+</div>
+
+<script>
+
+
+function processForm(e){
+    var name = document.forms["grocery-form"]["name"].value;
+    var price = parseFloat(document.forms["grocery-form"]["price"].value);
+    ctx.groceries.push({name:name, price:price});
+    return false;
+}
+</script>
+</body>
+</html>

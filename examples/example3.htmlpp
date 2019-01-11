@@ -1,0 +1,41 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+
+<import src="roster.json"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Griffindor Quidditch Roster</a>
+</nav>
+
+<div class="container">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 list-group">
+                    <div class="list-group-item active">Position</div>
+                    <foreach player in players>
+                        <div class="list-group-item"><print>player.position</print></div>
+                    </foreach>
+            </div>
+            <div class="col-sm-4 list-group">
+                    <div class="list-group-item active">Name</div>
+                    <foreach player in players>
+                        <div class="list-group-item"><print>player.name</print></div>
+                    </foreach>
+            </div>
+            <div class="col-sm-4 list-group">
+                    <div class="list-group-item active">Class Year</div>
+                    <foreach player in players>
+                        <div class="list-group-item"><print>player.year</print></div>
+                    </foreach>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

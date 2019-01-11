@@ -1,0 +1,11 @@
+{
+	"players":[
+		{"name":"Oliver Wood","position":"Keeper","year":7},
+		{"name":"Angelina Johnson","position":"Chaser","year":4},
+		{"name":"Katie Bell","position":"Chaser","year":3},
+		{"name":"Alicia Spinnet","position":"Chaser","year":4},
+		{"name":"George Weasley","position":"Beater","year":4},
+		{"name":"Fred Weasley","position":"Beater","year":4},
+		{"name":"Harry Potter","position":"Seeker","year":2}
+	]
+}
